@@ -1,12 +1,20 @@
-const http = require('http');
+const express = require('express');
+const connectDB = require('./config/db');
+const testRoutes = require('./routes/testRoutes');
+require('dotenv').config();
 
-const server = http.createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
-  res.end('Hello, world!\n');
-});
+// MongoDB 연결
+connectDB();
 
-const PORT = 3000;
-server.listen(PORT, () => {
-  console.log(`Server running at http://localhost:${PORT}/`);
+// Express 앱 생성
+const app = express();
+app.use(express.json()); // JSON 파싱
+
+// 👉 라우터 연결
+app.use('/api/tests', testRoutes);
+
+// 서버 실행
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Server running at http://localhost:${PORT}`);
 });

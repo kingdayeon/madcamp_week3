@@ -1,0 +1,11 @@
+# Node.js 관련
+node_modules/
+package-lock.json
+
+# 환경 변수 파일
+.env
+
+# 로그 파일
+logs/
+*.log
+
