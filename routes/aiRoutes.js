@@ -2,16 +2,52 @@ const express = require('express');
 const router = express.Router();
 const openai = require('../config/openai');
 
-// 🔮 사용자 질문과 답변을 바탕으로 OpenAI 응답 생성
-router.post('/generate-response', async (req, res) => {
+// // 🔮 사용자 질문과 답변을 바탕으로 OpenAI 응답 생성
+// router.post('/generate-response', async (req, res) => {
+//   const { questions, userMessage } = req.body;
+
+//   // 질문과 답변을 OpenAI 메시지 형식으로 변환
+//   const baseMessages = questions.map((q) => ({
+//     role: 'user',
+//     content: `Q: ${q.questionText}\nA: ${q.answerText}`,
+//   }));
+
+//   baseMessages.push({ role: 'user', content: userMessage });
+
+//   try {
+//     // OpenAI API 호출
+//     const response = await openai.chat.completions.create({
+//       model: 'gpt-3.5-turbo',
+//       messages: [
+//         { role: 'system', content: 'You are a helpful assistant who speaks like a philosopher.' },
+//         ...baseMessages,
+//       ],
+//       max_tokens: 150,
+//       temperature: 0.7,
+//     });
+
+//     const aiResponse = response.choices[0].message.content.trim();
+
+//     res.json({
+//       message: 'AI response generated successfully!',
+//       aiResponse,
+//     });
+//   } catch (error) {
+//     res.status(500).json({ error: error.message });
+//   }
+// });
+
+// 🔮 아리스토텔레스 대화 생성 API
+router.post('/generate-response/aristotle', async (req, res) => {
   const { questions, userMessage } = req.body;
 
-  // 질문과 답변을 OpenAI 메시지 형식으로 변환
+  // 기존 사용자 답변을 OpenAI 메시지로 변환
   const baseMessages = questions.map((q) => ({
     role: 'user',
     content: `Q: ${q.questionText}\nA: ${q.answerText}`,
   }));
 
+  // 사용자 입력 추가
   baseMessages.push({ role: 'user', content: userMessage });
 
   try {
@@ -19,7 +55,7 @@ router.post('/generate-response', async (req, res) => {
     const response = await openai.chat.completions.create({
       model: 'gpt-3.5-turbo',
       messages: [
-        { role: 'system', content: 'You are a helpful assistant who speaks like a philosopher.' },
+        { role: 'system', content: 'You are Aristotle. Speak with wisdom and focus on practical actions to achieve happiness.' },
         ...baseMessages,
       ],
       max_tokens: 150,
@@ -29,13 +65,88 @@ router.post('/generate-response', async (req, res) => {
     const aiResponse = response.choices[0].message.content.trim();
 
     res.json({
-      message: 'AI response generated successfully!',
+      message: 'Aristotle response generated successfully!',
       aiResponse,
     });
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
 });
+
+
+// 🔮 쇼펜하우어 대화 생성 API
+router.post('/generate-response/schopenhauer', async (req, res) => {
+  const { questions, userMessage } = req.body;
+
+  // 기존 사용자 답변을 OpenAI 메시지로 변환
+  const baseMessages = questions.map((q) => ({
+    role: 'user',
+    content: `Q: ${q.questionText}\nA: ${q.answerText}`,
+  }));
+
+  // 사용자 입력 추가
+  baseMessages.push({ role: 'user', content: userMessage });
+
+  try {
+    // OpenAI API 호출
+    const response = await openai.chat.completions.create({
+      model: 'gpt-3.5-turbo',
+      messages: [
+        { role: 'system', content: 'You are Schopenhauer. Focus on the inevitability of suffering and the human struggle to find meaning in life.' },
+        ...baseMessages,
+      ],
+      max_tokens: 150,
+      temperature: 0.8,
+    });
+
+    const aiResponse = response.choices[0].message.content.trim();
+
+    res.json({
+      message: 'Schopenhauer response generated successfully!',
+      aiResponse,
+    });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+// 🔮 소크라테스 대화 생성 API
+router.post('/generate-response/socrates', async (req, res) => {
+  const { questions, userMessage } = req.body;
+
+  // 기존 사용자 답변을 OpenAI 메시지로 변환
+  const baseMessages = questions.map((q) => ({
+    role: 'user',
+    content: `Q: ${q.questionText}\nA: ${q.answerText}`,
+  }));
+
+  // 사용자 입력 추가
+  baseMessages.push({ role: 'user', content: userMessage });
+
+  try {
+    // OpenAI API 호출
+    const response = await openai.chat.completions.create({
+      model: 'gpt-3.5-turbo',
+      messages: [
+        { role: 'system', content: 'You are Socrates. Engage in a dialogue by asking deep, thought-provoking questions to encourage self-reflection.' },
+        ...baseMessages,
+      ],
+      max_tokens: 150,
+      temperature: 0.6,
+    });
+
+    const aiResponse = response.choices[0].message.content.trim();
+
+    res.json({
+      message: 'Socrates response generated successfully!',
+      aiResponse,
+    });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+
 
 // 🔮 사용자 질문과 답변을 바탕으로 각 stage별 요약 생성
 router.post('/generate-statistics', async (req, res) => {
