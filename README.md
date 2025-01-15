@@ -1,6 +1,7 @@
 ## Outline
 
-![home_background.webp](https://prod-files-secure.s3.us-west-2.amazonaws.com/f6cb388f-3934-47d6-9928-26d2e10eb0fc/5a92e1c9-9310-4565-88e6-dadc118d727f/home_background.webp)
+![dazed_island_real](https://github.com/user-attachments/assets/a65d9141-3d62-4f7e-8735-176ea030019b)
+
 
 바쁜 일상 속에서 우리는 감사해야 할 순간을 잊고 살아갑니다. 이 웹사이트는 죽음 이후의 나를 가정하고, 깊이 있는 질문과 철학자와의 대화를 통해 **삶의 의미와 본질을 탐구**하는 공간입니다.
 
@@ -12,14 +13,16 @@
 
 **김보민 (고려대학교 컴퓨터학과 23, FE)** 
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/f6cb388f-3934-47d6-9928-26d2e10eb0fc/7dbfba9e-4abb-4796-84dd-cfe6002be2e5/image.png)
+![ㅂㅁ](https://github.com/user-attachments/assets/638033e7-5968-4514-a755-3185a6350c13)
+
 
 - React + js
 - Github, Figma
 
 **김다연 (한양대학교 정보시스템학과 22, BE)**
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/f6cb388f-3934-47d6-9928-26d2e10eb0fc/5e1eed35-2401-46a2-b0bd-9ab41a7da977/image.png)
+![ㄷㅇ](https://github.com/user-attachments/assets/aa328793-2bc9-4cf6-8b5d-cd791e70cd0b)
+
 
 - Node.js + express
 - MongoDB Atlas
@@ -41,7 +44,8 @@
 
 ## DB diagram
 
-![Untitled.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/f6cb388f-3934-47d6-9928-26d2e10eb0fc/a192e85f-80b6-42f5-88b8-b43e5ebce6bd/Untitled.png)
+![Untitled](https://github.com/user-attachments/assets/c5c05c15-6847-48bb-82f6-24f924830e1f)
+
 
 ## 상세 페이지
 
